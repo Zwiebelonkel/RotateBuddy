@@ -19,372 +19,247 @@
     --accent-dim:#3d3570;
     --red:       #f76a6a;
     --green:     #6af7a5;
+    --yellow:    #f7d56a;
     --text:      #e8e8f0;
     --muted:     #6b6b88;
     --radius:    12px;
   }
 
-  html, body {
-    height: 100%;
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 14px;
-    line-height: 1.5;
-  }
+  html, body { height: 100%; background: var(--bg); color: var(--text);
+    font-family: 'Inter', system-ui, sans-serif; font-size: 14px; line-height: 1.5; }
 
   /* ── HEADER ── */
   header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 18px 28px;
-    border-bottom: 1px solid var(--border);
-    background: var(--surface);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 28px; border-bottom: 1px solid var(--border);
+    background: var(--surface); position: sticky; top: 0; z-index: 100;
     backdrop-filter: blur(12px);
   }
-
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 600;
-    font-size: 16px;
-    letter-spacing: -0.02em;
-  }
-
-  .logo-icon {
-    width: 32px; height: 32px;
-    background: linear-gradient(135deg, var(--accent), #c46af7);
-    border-radius: 8px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 16px;
-  }
-
-  .header-stats {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    color: var(--muted);
-  }
-
+  .logo { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 16px; letter-spacing: -0.02em; }
+  .logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), #c46af7);
+    border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+  .header-stats { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted); }
   .header-stats span { color: var(--accent-hi); }
 
   /* ── TOOLBAR ── */
   .toolbar {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 14px 28px;
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
-    flex-wrap: wrap;
+    display: flex; align-items: center; gap: 10px; padding: 14px 28px;
+    background: var(--surface); border-bottom: 1px solid var(--border); flex-wrap: wrap;
   }
-
-  .toolbar-label {
-    font-size: 11px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--muted);
-    margin-right: 4px;
-  }
+  .toolbar-label { font-size: 11px; font-weight: 500; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--muted); margin-right: 4px; }
 
   .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 7px 14px;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    background: var(--card);
-    color: var(--text);
-    font-size: 13px;
-    font-weight: 500;
-    cursor: pointer;
+    display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px;
+    border-radius: 8px; border: 1px solid var(--border); background: var(--card);
+    color: var(--text); font-size: 13px; font-weight: 500; cursor: pointer;
     transition: background 0.15s, border-color 0.15s, transform 0.1s;
-    white-space: nowrap;
-    user-select: none;
+    white-space: nowrap; user-select: none;
   }
-
   .btn:hover { background: #252535; border-color: var(--accent-dim); }
   .btn:active { transform: scale(0.96); }
-
-  .btn-primary {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: #fff;
-  }
+  .btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
   .btn-primary:hover { background: var(--accent-hi); border-color: var(--accent-hi); }
-
   .btn-danger { border-color: #3d2020; }
   .btn-danger:hover { background: #2a1818; border-color: var(--red); color: var(--red); }
-
   .btn-success { border-color: #1a3d2a; }
   .btn-success:hover { background: #162a1e; border-color: var(--green); color: var(--green); }
+  .btn-warn { border-color: #3d3020; }
+  .btn-warn:hover { background: #2a2416; border-color: var(--yellow); color: var(--yellow); }
 
-  .toolbar-sep {
-    width: 1px;
-    height: 28px;
-    background: var(--border);
-    margin: 0 4px;
-  }
+  .toolbar-sep { width: 1px; height: 28px; background: var(--border); margin: 0 4px; }
 
   /* ── DROP ZONE ── */
   #dropzone {
-    margin: 40px auto;
-    max-width: 600px;
-    border: 2px dashed var(--border);
-    border-radius: var(--radius);
-    padding: 60px 40px;
-    text-align: center;
-    cursor: pointer;
-    transition: border-color 0.2s, background 0.2s;
-    background: var(--surface);
+    margin: 40px auto; max-width: 600px; border: 2px dashed var(--border);
+    border-radius: var(--radius); padding: 60px 40px; text-align: center;
+    cursor: pointer; transition: border-color 0.2s, background 0.2s; background: var(--surface);
   }
-
-  #dropzone.drag-over {
-    border-color: var(--accent);
-    background: rgba(124,106,247,0.07);
-  }
-
-  #dropzone h2 {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: var(--text);
-  }
-
+  #dropzone.drag-over { border-color: var(--accent); background: rgba(124,106,247,0.07); }
+  #dropzone h2 { font-size: 20px; font-weight: 600; margin-bottom: 8px; color: var(--text); }
   #dropzone p { color: var(--muted); margin-bottom: 24px; }
-
   #file-input { display: none; }
-
-  .drop-icon {
-    font-size: 48px;
-    margin-bottom: 18px;
-    filter: grayscale(0.3);
-  }
+  .drop-icon { font-size: 48px; margin-bottom: 18px; filter: grayscale(0.3); }
 
   /* ── GRID ── */
-  #grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 18px;
-    padding: 24px 28px 60px;
-  }
+  #grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 18px; padding: 24px 28px 60px; }
 
   /* ── CARD ── */
   .img-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: border-color 0.2s, box-shadow 0.2s;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: var(--radius); overflow: hidden;
+    display: flex; flex-direction: column; transition: border-color 0.2s, box-shadow 0.2s;
   }
+  .img-card:hover { border-color: var(--accent-dim);
+    box-shadow: 0 0 0 1px var(--accent-dim), 0 8px 32px rgba(0,0,0,0.4); }
+  .img-card.selected { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
 
-  .img-card:hover {
-    border-color: var(--accent-dim);
-    box-shadow: 0 0 0 1px var(--accent-dim), 0 8px 32px rgba(0,0,0,0.4);
-  }
-
-  .img-card.selected {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 1px var(--accent);
-  }
-
-  /* ── PREVIEW WRAPPER ── */
+  /* ── PREVIEW ── */
   .preview-wrap {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    background: #0a0a10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    cursor: pointer;
+    position: relative; width: 100%; aspect-ratio: 1 / 1; background: #0a0a10;
+    display: flex; align-items: center; justify-content: center; overflow: hidden; cursor: pointer;
   }
-
   .preview-wrap img {
-    max-width: 90%;
-    max-height: 90%;
-    object-fit: contain;
-    transition: transform 0.25s cubic-bezier(.4,0,.2,1);
-    will-change: transform;
-    display: block;
+    max-width: 90%; max-height: 90%; object-fit: contain;
+    transition: transform 0.25s cubic-bezier(.4,0,.2,1); will-change: transform; display: block;
   }
-
-  /* selection badge */
   .sel-badge {
-    position: absolute;
-    top: 8px; left: 8px;
-    width: 20px; height: 20px;
-    border-radius: 50%;
-    border: 2px solid var(--border);
-    background: var(--card);
+    position: absolute; top: 8px; left: 8px; width: 20px; height: 20px;
+    border-radius: 50%; border: 2px solid var(--border); background: var(--card);
     transition: background 0.15s, border-color 0.15s;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 11px;
-    z-index: 2;
+    display: flex; align-items: center; justify-content: center; font-size: 11px; z-index: 2;
   }
-
-  .img-card.selected .sel-badge {
-    background: var(--accent);
-    border-color: var(--accent);
-  }
-
-  .sel-badge::after {
-    content: '';
-    display: none;
-    width: 8px; height: 5px;
-    border-left: 2px solid #fff;
-    border-bottom: 2px solid #fff;
-    transform: rotate(-45deg) translateY(-1px);
-  }
-
+  .img-card.selected .sel-badge { background: var(--accent); border-color: var(--accent); }
+  .sel-badge::after { content: ''; display: none; width: 8px; height: 5px;
+    border-left: 2px solid #fff; border-bottom: 2px solid #fff;
+    transform: rotate(-45deg) translateY(-1px); }
   .img-card.selected .sel-badge::after { display: block; }
-
-  /* rotation badge */
   .rot-badge {
-    position: absolute;
-    bottom: 8px; right: 8px;
-    background: rgba(0,0,0,0.65);
-    backdrop-filter: blur(6px);
-    border-radius: 6px;
-    padding: 2px 7px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: var(--accent-hi);
-    border: 1px solid rgba(124,106,247,0.3);
-    pointer-events: none;
+    position: absolute; bottom: 8px; right: 8px;
+    background: rgba(0,0,0,0.65); backdrop-filter: blur(6px);
+    border-radius: 6px; padding: 2px 7px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--accent-hi); border: 1px solid rgba(124,106,247,0.3); pointer-events: none;
   }
 
-  /* ── CARD INFO ── */
-  .card-info {
-    padding: 10px 12px 6px;
-  }
+  /* ── CARD INFO / RENAME ── */
+  .card-info { padding: 10px 12px 6px; }
+  .card-name-wrap { display: flex; align-items: center; gap: 5px; min-width: 0; }
 
   .card-name {
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--text);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    font-size: 12px; font-weight: 500; color: var(--text);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    cursor: pointer; flex: 1; min-width: 0;
+    border-radius: 4px; padding: 1px 3px;
+    transition: background 0.15s, color 0.15s;
   }
+  .card-name:hover { background: rgba(124,106,247,0.12); color: var(--accent-hi); }
 
-  .card-meta {
-    font-size: 11px;
-    color: var(--muted);
-    margin-top: 2px;
+  .rename-pencil {
+    flex-shrink: 0; font-size: 11px; color: var(--muted); cursor: pointer;
+    opacity: 0; transition: opacity 0.15s;
+    padding: 2px 4px; border-radius: 4px;
+  }
+  .card-info:hover .rename-pencil { opacity: 1; }
+  .rename-pencil:hover { color: var(--accent-hi); background: rgba(124,106,247,0.12); }
+
+  /* inline rename input */
+  .card-name-input {
+    display: none; width: 100%; font-size: 12px; font-weight: 500;
+    background: var(--bg); color: var(--accent-hi);
+    border: 1px solid var(--accent); border-radius: 5px;
+    padding: 2px 6px; outline: none;
+    font-family: inherit;
+  }
+  .card-name-input.active { display: block; }
+  .card-name.hidden { display: none; }
+
+  .card-meta { font-size: 11px; color: var(--muted); margin-top: 3px; }
+  .card-ext-badge {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    background: var(--border); color: var(--muted); padding: 1px 5px;
+    border-radius: 4px; flex-shrink: 0;
   }
 
   /* ── CARD CONTROLS ── */
-  .card-controls {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 10px 10px;
-    border-top: 1px solid var(--border);
-  }
-
+  .card-controls { display: flex; align-items: center; gap: 6px;
+    padding: 8px 10px 10px; border-top: 1px solid var(--border); }
   .cc-btn {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 6px 4px;
-    border-radius: 7px;
-    border: 1px solid var(--border);
-    background: transparent;
-    color: var(--muted);
-    font-size: 15px;
-    cursor: pointer;
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    padding: 6px 4px; border-radius: 7px; border: 1px solid var(--border);
+    background: transparent; color: var(--muted); font-size: 15px; cursor: pointer;
     transition: background 0.15s, color 0.15s, border-color 0.15s, transform 0.1s;
     user-select: none;
   }
-
   .cc-btn:hover { background: #252535; color: var(--text); border-color: var(--accent-dim); }
   .cc-btn:active { transform: scale(0.9); }
-
-  .cc-btn.ccw:hover { color: #a599ff; }
-  .cc-btn.cw:hover  { color: #a599ff; }
+  .cc-btn.ccw:hover { color: var(--accent-hi); }
+  .cc-btn.cw:hover  { color: var(--accent-hi); }
+  .cc-btn.rename-btn:hover { color: var(--yellow); border-color: #3d3020; }
   .cc-btn.reset:hover { color: var(--red); border-color: #3d2020; }
   .cc-btn.dl:hover { color: var(--green); border-color: #1a3d2a; }
 
-  /* ── EMPTY / HIDDEN ── */
+  /* ── TOOLBAR AREA ── */
   #toolbar-area { display: none; }
-  #grid:empty + #empty-hint { display: block; }
-  #empty-hint { display: none; text-align: center; color: var(--muted); padding: 40px; }
+
+  /* ── BULK RENAME MODAL ── */
+  .modal-backdrop {
+    display: none; position: fixed; inset: 0;
+    background: rgba(0,0,0,0.75); z-index: 200;
+    align-items: center; justify-content: center;
+    backdrop-filter: blur(6px);
+  }
+  .modal-backdrop.open { display: flex; }
+
+  .modal {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 16px; padding: 28px; width: min(540px, 92vw);
+    box-shadow: 0 32px 80px rgba(0,0,0,0.7);
+    display: flex; flex-direction: column; gap: 18px;
+  }
+  .modal h3 { font-size: 16px; font-weight: 600; }
+  .modal p  { font-size: 13px; color: var(--muted); margin-top: -10px; }
+
+  .modal-field { display: flex; flex-direction: column; gap: 6px; }
+  .modal-field label { font-size: 12px; font-weight: 500; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.07em; }
+
+  .modal-input {
+    background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
+    padding: 9px 12px; color: var(--text); font-size: 13px;
+    font-family: 'JetBrains Mono', monospace; outline: none;
+    transition: border-color 0.15s;
+  }
+  .modal-input:focus { border-color: var(--accent); }
+
+  .modal-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .modal-row label { font-size: 12px; color: var(--muted); cursor: pointer;
+    display: flex; align-items: center; gap: 6px; }
+
+  .preview-list {
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: 8px; padding: 10px 12px;
+    max-height: 180px; overflow-y: auto;
+    display: flex; flex-direction: column; gap: 5px;
+  }
+  .preview-item { display: flex; align-items: center; gap: 8px; font-size: 12px; }
+  .preview-old { color: var(--muted); text-decoration: line-through;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; flex: 1; }
+  .preview-arrow { color: var(--border); flex-shrink: 0; }
+  .preview-new { color: var(--accent-hi);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; flex: 1;
+    font-family: 'JetBrains Mono', monospace; }
+
+  .modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 4px; }
 
   /* ── LIGHTBOX ── */
   #lightbox {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.88);
-    z-index: 1000;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(8px);
+    display: none; position: fixed; inset: 0;
+    background: rgba(0,0,0,0.88); z-index: 1000;
+    align-items: center; justify-content: center; backdrop-filter: blur(8px);
   }
-
   #lightbox.open { display: flex; }
-
-  #lb-img {
-    max-width: 90vw;
-    max-height: 85vh;
-    object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 24px 80px rgba(0,0,0,0.8);
-    transition: transform 0.25s cubic-bezier(.4,0,.2,1);
-  }
-
-  #lb-close {
-    position: fixed;
-    top: 20px; right: 24px;
-    background: var(--card);
-    border: 1px solid var(--border);
-    color: var(--text);
-    border-radius: 50%;
-    width: 36px; height: 36px;
-    font-size: 18px;
-    cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    transition: background 0.15s;
-  }
-
+  #lb-img { max-width: 90vw; max-height: 85vh; object-fit: contain;
+    border-radius: 8px; box-shadow: 0 24px 80px rgba(0,0,0,0.8);
+    transition: transform 0.25s cubic-bezier(.4,0,.2,1); }
+  #lb-close { position: fixed; top: 20px; right: 24px; background: var(--card);
+    border: 1px solid var(--border); color: var(--text); border-radius: 50%;
+    width: 36px; height: 36px; font-size: 18px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; transition: background 0.15s; }
   #lb-close:hover { background: #252535; }
 
   /* ── TOAST ── */
   #toast {
-    position: fixed;
-    bottom: 28px;
-    left: 50%;
+    position: fixed; bottom: 28px; left: 50%;
     transform: translateX(-50%) translateY(20px);
-    background: var(--card);
-    border: 1px solid var(--accent-dim);
-    color: var(--text);
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-size: 13px;
-    opacity: 0;
-    transition: opacity 0.2s, transform 0.2s;
-    pointer-events: none;
-    z-index: 999;
-    white-space: nowrap;
+    background: var(--card); border: 1px solid var(--accent-dim);
+    color: var(--text); padding: 10px 20px; border-radius: 10px; font-size: 13px;
+    opacity: 0; transition: opacity 0.2s, transform 0.2s;
+    pointer-events: none; z-index: 999; white-space: nowrap;
   }
+  #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-  #toast.show {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
-
-  /* ── SCROLLBAR ── */
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: var(--bg); }
   ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
@@ -393,15 +268,14 @@
   @media (max-width: 640px) {
     header { padding: 14px 16px; }
     .toolbar { padding: 10px 16px; }
-    #grid { padding: 16px 16px 60px; gap: 12px; }
-    #grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+    #grid { padding: 16px 16px 60px; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
     #dropzone { margin: 24px 16px; padding: 40px 20px; }
   }
 </style>
 </head>
 <body>
 
-<!-- ── HEADER ── -->
+<!-- HEADER -->
 <header>
   <div class="logo">
     <div class="logo-icon">⟳</div>
@@ -410,39 +284,26 @@
   <div class="header-stats" id="stats">Keine Bilder geladen</div>
 </header>
 
-<!-- ── TOOLBAR ── -->
+<!-- TOOLBAR -->
 <div id="toolbar-area" class="toolbar">
   <span class="toolbar-label">Alle</span>
-  <button class="btn" onclick="rotateAll(-90)" title="Alle 90° gegen Uhrzeigersinn">
-    ↺ −90°
-  </button>
-  <button class="btn" onclick="rotateAll(90)" title="Alle 90° im Uhrzeigersinn">
-    ↻ +90°
-  </button>
-  <button class="btn btn-danger" onclick="resetAll()">
-    ✕ Reset alle
-  </button>
+  <button class="btn" onclick="rotateAll(-90)">↺ −90°</button>
+  <button class="btn" onclick="rotateAll(90)">↻ +90°</button>
+  <button class="btn btn-danger" onclick="resetAll()">✕ Reset alle</button>
 
   <div class="toolbar-sep"></div>
   <span class="toolbar-label">Auswahl</span>
-
-  <button class="btn" onclick="toggleSelectAll()">
-    ☐ Alle auswählen
-  </button>
+  <button class="btn" onclick="toggleSelectAll()">☐ Alle auswählen</button>
   <button class="btn" onclick="rotateSelected(-90)">↺ −90°</button>
   <button class="btn" onclick="rotateSelected(90)">↻ +90°</button>
+  <button class="btn btn-warn" onclick="openBulkRename()">✎ Umbenennen</button>
 
   <div class="toolbar-sep"></div>
-
-  <button class="btn btn-success" onclick="downloadAll()">
-    ↓ Alle speichern
-  </button>
-  <button class="btn btn-danger" onclick="clearAll()">
-    🗑 Leeren
-  </button>
+  <button class="btn btn-success" onclick="downloadAll()">↓ Alle speichern</button>
+  <button class="btn btn-danger" onclick="clearAll()">🗑 Leeren</button>
 </div>
 
-<!-- ── DROP ZONE ── -->
+<!-- DROP ZONE -->
 <div id="dropzone" onclick="document.getElementById('file-input').click()">
   <div class="drop-icon">🖼️</div>
   <h2>Bilder hierher ziehen</h2>
@@ -453,48 +314,78 @@
   <input type="file" id="file-input" accept="image/*" multiple>
 </div>
 
-<!-- ── GRID ── -->
+<!-- GRID -->
 <div id="grid"></div>
 
-<!-- ── LIGHTBOX ── -->
+<!-- BULK RENAME MODAL -->
+<div class="modal-backdrop" id="bulk-rename-modal">
+  <div class="modal">
+    <h3>✎ Bulk-Umbenennen</h3>
+    <p>Benennt alle ausgewählten Bilder um (ohne Dateiendung).</p>
+
+    <div class="modal-field">
+      <label>Prefix</label>
+      <input class="modal-input" id="br-prefix" placeholder="z.B. urlaub_" oninput="updateBulkPreview()">
+    </div>
+
+    <div class="modal-field">
+      <label>Suffix</label>
+      <input class="modal-input" id="br-suffix" placeholder="z.B. _final" oninput="updateBulkPreview()">
+    </div>
+
+    <div class="modal-field">
+      <label>Nummerierung</label>
+      <div class="modal-row">
+        <label><input type="checkbox" id="br-numbering" checked onchange="updateBulkPreview()"> Nummer anhängen</label>
+        <label>Startzahl <input class="modal-input" id="br-start" type="number" value="1" min="0" style="width:70px;padding:4px 8px" oninput="updateBulkPreview()"></label>
+        <label>Stellen <input class="modal-input" id="br-pad" type="number" value="2" min="1" max="6" style="width:60px;padding:4px 8px" oninput="updateBulkPreview()"></label>
+      </div>
+    </div>
+
+    <div class="modal-field">
+      <label>Vorschau</label>
+      <div class="preview-list" id="br-preview"></div>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn btn-danger" onclick="closeBulkRename()">Abbrechen</button>
+      <button class="btn btn-primary" onclick="applyBulkRename()">Umbenennen</button>
+    </div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
 <div id="lightbox">
   <button id="lb-close" onclick="closeLightbox()">✕</button>
   <img id="lb-img" src="" alt="">
 </div>
 
-<!-- ── TOAST ── -->
+<!-- TOAST -->
 <div id="toast"></div>
 
 <script>
   // ── STATE ──────────────────────────────────────────
-  const images = []; // { id, name, size, src, rotation, el, imgEl }
+  const images = [];
   let lbCurrentId = null;
 
   // ── DOM REFS ──────────────────────────────────────
-  const dropzone     = document.getElementById('dropzone');
-  const fileInput    = document.getElementById('file-input');
-  const grid         = document.getElementById('grid');
-  const toolbarArea  = document.getElementById('toolbar-area');
-  const statsEl      = document.getElementById('stats');
-  const lightbox     = document.getElementById('lightbox');
-  const lbImg        = document.getElementById('lb-img');
+  const dropzone    = document.getElementById('dropzone');
+  const fileInput   = document.getElementById('file-input');
+  const grid        = document.getElementById('grid');
+  const toolbarArea = document.getElementById('toolbar-area');
+  const statsEl     = document.getElementById('stats');
+  const lightbox    = document.getElementById('lightbox');
+  const lbImg       = document.getElementById('lb-img');
 
   // ── FILE INPUT ────────────────────────────────────
   fileInput.addEventListener('change', e => handleFiles(e.target.files));
 
   // ── DRAG & DROP ───────────────────────────────────
-  dropzone.addEventListener('dragover', e => {
-    e.preventDefault();
-    dropzone.classList.add('drag-over');
-  });
+  dropzone.addEventListener('dragover', e => { e.preventDefault(); dropzone.classList.add('drag-over'); });
   dropzone.addEventListener('dragleave', () => dropzone.classList.remove('drag-over'));
   dropzone.addEventListener('drop', e => {
-    e.preventDefault();
-    dropzone.classList.remove('drag-over');
-    handleFiles(e.dataTransfer.files);
+    e.preventDefault(); dropzone.classList.remove('drag-over'); handleFiles(e.dataTransfer.files);
   });
-
-  // Also allow drop on entire page
   document.addEventListener('dragover', e => e.preventDefault());
   document.addEventListener('drop', e => {
     e.preventDefault();
@@ -506,13 +397,15 @@
   function handleFiles(fileList) {
     const files = Array.from(fileList).filter(f => f.type.startsWith('image/'));
     if (!files.length) return;
-
     files.forEach(file => {
       const reader = new FileReader();
       reader.onload = ev => addImage(file, ev.target.result);
       reader.readAsDataURL(file);
     });
   }
+
+  function getExt(name) { return name.includes('.') ? name.split('.').pop().toLowerCase() : ''; }
+  function getBase(name) { return name.includes('.') ? name.slice(0, name.lastIndexOf('.')) : name; }
 
   function addImage(file, src) {
     const id = Date.now() + Math.random();
@@ -530,62 +423,111 @@
     card.className = 'img-card';
     card.dataset.id = entry.id;
 
+    // Preview
     const prevWrap = document.createElement('div');
     prevWrap.className = 'preview-wrap';
 
-    // Selection badge
     const selBadge = document.createElement('div');
     selBadge.className = 'sel-badge';
     prevWrap.appendChild(selBadge);
 
-    // Image
     const img = document.createElement('img');
-    img.src = entry.src;
-    img.alt = entry.name;
-    img.draggable = false;
+    img.src = entry.src; img.alt = entry.name; img.draggable = false;
     prevWrap.appendChild(img);
 
-    // Rotation badge
     const rotBadge = document.createElement('div');
     rotBadge.className = 'rot-badge';
-    rotBadge.textContent = '0°';
+    rotBadge.textContent = '0°'; rotBadge.style.opacity = '0';
     prevWrap.appendChild(rotBadge);
 
-    // Click on image = lightbox
     img.addEventListener('click', () => openLightbox(entry));
-    // Click on badge area = toggle select
-    selBadge.addEventListener('click', (e) => {
-      e.stopPropagation();
-      toggleSelect(entry);
-    });
+    selBadge.addEventListener('click', e => { e.stopPropagation(); toggleSelect(entry); });
 
-    // Card info
+    // Info row
     const info = document.createElement('div');
     info.className = 'card-info';
-    const name = document.createElement('div');
-    name.className = 'card-name';
-    name.textContent = entry.name;
-    name.title = entry.name;
+
+    const nameWrap = document.createElement('div');
+    nameWrap.className = 'card-name-wrap';
+
+    const nameEl = document.createElement('div');
+    nameEl.className = 'card-name';
+    nameEl.title = entry.name;
+    nameEl.textContent = getBase(entry.name);
+
+    const extBadge = document.createElement('span');
+    extBadge.className = 'card-ext-badge';
+    extBadge.textContent = '.' + getExt(entry.name);
+
+    const pencil = document.createElement('span');
+    pencil.className = 'rename-pencil';
+    pencil.title = 'Umbenennen';
+    pencil.textContent = '✎';
+
+    const nameInput = document.createElement('input');
+    nameInput.className = 'card-name-input';
+    nameInput.type = 'text';
+    nameInput.spellcheck = false;
+
+    // Activate rename on click of name or pencil
+    function startRename() {
+      nameEl.classList.add('hidden');
+      nameInput.classList.add('active');
+      nameInput.value = getBase(entry.name);
+      nameInput.focus();
+      nameInput.select();
+    }
+
+    function commitRename() {
+      const raw = nameInput.value.trim();
+      if (raw && raw !== getBase(entry.name)) {
+        const ext = getExt(entry.name);
+        entry.name = ext ? `${raw}.${ext}` : raw;
+        nameEl.textContent = raw;
+        nameEl.title = entry.name;
+        extBadge.textContent = '.' + ext;
+        toast(`Umbenannt → ${entry.name}`);
+      }
+      nameEl.classList.remove('hidden');
+      nameInput.classList.remove('active');
+    }
+
+    nameEl.addEventListener('click', startRename);
+    pencil.addEventListener('click', startRename);
+    nameInput.addEventListener('blur', commitRename);
+    nameInput.addEventListener('keydown', e => {
+      if (e.key === 'Enter') { e.preventDefault(); commitRename(); }
+      if (e.key === 'Escape') {
+        nameEl.classList.remove('hidden');
+        nameInput.classList.remove('active');
+      }
+    });
+
+    nameWrap.appendChild(nameEl);
+    nameWrap.appendChild(nameInput);
+    nameWrap.appendChild(extBadge);
+    nameWrap.appendChild(pencil);
+
     const meta = document.createElement('div');
     meta.className = 'card-meta';
     meta.textContent = formatSize(entry.size);
-    info.appendChild(name);
+
+    info.appendChild(nameWrap);
     info.appendChild(meta);
 
     // Controls
     const controls = document.createElement('div');
     controls.className = 'card-controls';
 
-    const btnCCW = makeCtrlBtn('↺', 'ccw', 'Links drehen (−90°)', () => rotateOne(entry, -90));
-    const btnCW  = makeCtrlBtn('↻', 'cw',  'Rechts drehen (+90°)', () => rotateOne(entry, 90));
-    const btnRst = makeCtrlBtn('✕', 'reset','Zurücksetzen', () => {
-      entry.rotation = 0;
-      updateCardVisuals(entry);
-    });
-    const btnDL  = makeCtrlBtn('↓', 'dl',  'Bild herunterladen', () => downloadOne(entry));
+    const btnCCW    = makeCtrlBtn('↺', 'ccw',        'Links drehen (−90°)',  () => rotateOne(entry, -90));
+    const btnCW     = makeCtrlBtn('↻', 'cw',         'Rechts drehen (+90°)', () => rotateOne(entry, 90));
+    const btnRename = makeCtrlBtn('✎', 'rename-btn', 'Umbenennen',           startRename);
+    const btnRst    = makeCtrlBtn('✕', 'reset',      'Zurücksetzen',         () => { entry.rotation = 0; updateCardVisuals(entry); });
+    const btnDL     = makeCtrlBtn('↓', 'dl',         'Herunterladen',        () => downloadOne(entry));
 
     controls.appendChild(btnCCW);
     controls.appendChild(btnCW);
+    controls.appendChild(btnRename);
     controls.appendChild(btnRst);
     controls.appendChild(btnDL);
 
@@ -594,18 +536,18 @@
     card.appendChild(controls);
     grid.appendChild(card);
 
-    entry.el     = card;
-    entry.imgEl  = img;
+    entry.el       = card;
+    entry.imgEl    = img;
     entry.rotBadge = rotBadge;
+    entry.nameEl   = nameEl;
+    entry.nameInput= nameInput;
+    entry.extBadge = extBadge;
   }
 
   function makeCtrlBtn(icon, cls, title, fn) {
     const b = document.createElement('button');
-    b.className = `cc-btn ${cls}`;
-    b.title = title;
-    b.textContent = icon;
-    b.addEventListener('click', fn);
-    return b;
+    b.className = `cc-btn ${cls}`; b.title = title; b.textContent = icon;
+    b.addEventListener('click', fn); return b;
   }
 
   // ── ROTATE ────────────────────────────────────────
@@ -613,157 +555,180 @@
     entry.rotation = ((entry.rotation + delta) % 360 + 360) % 360;
     updateCardVisuals(entry);
   }
-
   function rotateAll(delta) {
-    images.forEach(e => {
-      e.rotation = ((e.rotation + delta) % 360 + 360) % 360;
-      updateCardVisuals(e);
-    });
+    images.forEach(e => { e.rotation = ((e.rotation + delta) % 360 + 360) % 360; updateCardVisuals(e); });
     toast(`Alle ${images.length} Bilder um ${delta > 0 ? '+' : ''}${delta}° gedreht`);
   }
-
   function rotateSelected(delta) {
     const sel = images.filter(e => e.selected);
     if (!sel.length) { toast('Keine Bilder ausgewählt'); return; }
-    sel.forEach(e => {
-      e.rotation = ((e.rotation + delta) % 360 + 360) % 360;
-      updateCardVisuals(e);
-    });
+    sel.forEach(e => { e.rotation = ((e.rotation + delta) % 360 + 360) % 360; updateCardVisuals(e); });
     toast(`${sel.length} Bilder um ${delta > 0 ? '+' : ''}${delta}° gedreht`);
   }
-
   function resetAll() {
     images.forEach(e => { e.rotation = 0; updateCardVisuals(e); });
     toast('Alle Rotationen zurückgesetzt');
   }
-
   function updateCardVisuals(entry) {
     if (!entry.imgEl) return;
     entry.imgEl.style.transform = `rotate(${entry.rotation}deg)`;
     entry.rotBadge.textContent = `${entry.rotation}°`;
     entry.rotBadge.style.opacity = entry.rotation === 0 ? '0' : '1';
-    // Update lightbox if open
-    if (lbCurrentId === entry.id) {
-      lbImg.style.transform = `rotate(${entry.rotation}deg)`;
-    }
+    if (lbCurrentId === entry.id) lbImg.style.transform = `rotate(${entry.rotation}deg)`;
   }
 
   // ── SELECT ────────────────────────────────────────
   function toggleSelect(entry) {
     entry.selected = !entry.selected;
-    if (entry.selected) {
-      entry.el.classList.add('selected');
-    } else {
-      entry.el.classList.remove('selected');
-    }
+    entry.el.classList.toggle('selected', entry.selected);
     updateStats();
   }
-
   function toggleSelectAll() {
     const allSelected = images.every(e => e.selected);
-    images.forEach(e => {
-      e.selected = !allSelected;
-      e.el.classList.toggle('selected', e.selected);
-    });
+    images.forEach(e => { e.selected = !allSelected; e.el.classList.toggle('selected', e.selected); });
     updateStats();
   }
 
-  // ── DOWNLOAD ──────────────────────────────────────
-  function downloadOne(entry) {
-    exportRotated(entry, name => {
-      toast(`Gespeichert: ${name}`);
-    });
+  // ── BULK RENAME ───────────────────────────────────
+  function openBulkRename() {
+    const sel = images.filter(e => e.selected);
+    if (!sel.length) { toast('Keine Bilder ausgewählt'); return; }
+    updateBulkPreview();
+    document.getElementById('bulk-rename-modal').classList.add('open');
+  }
+  function closeBulkRename() {
+    document.getElementById('bulk-rename-modal').classList.remove('open');
   }
 
+  function buildBulkName(baseName, index) {
+    const prefix    = document.getElementById('br-prefix').value;
+    const suffix    = document.getElementById('br-suffix').value;
+    const numbering = document.getElementById('br-numbering').checked;
+    const start     = parseInt(document.getElementById('br-start').value) || 1;
+    const pad       = parseInt(document.getElementById('br-pad').value)   || 2;
+
+    if (!prefix && !suffix && !numbering) return baseName; // nothing changed
+
+    let num = numbering ? String(start + index).padStart(pad, '0') : '';
+    // If prefix/suffix empty AND no number, keep original base
+    let newBase = prefix + (numbering ? num : baseName) + suffix;
+    if (!prefix && !suffix && !numbering) newBase = baseName;
+    return newBase || baseName;
+  }
+
+  function updateBulkPreview() {
+    const sel = images.filter(e => e.selected);
+    const container = document.getElementById('br-preview');
+    container.innerHTML = '';
+    sel.slice(0, 12).forEach((entry, i) => {
+      const ext     = getExt(entry.name);
+      const oldBase = getBase(entry.name);
+      const newBase = buildBulkName(oldBase, i);
+      const newName = ext ? `${newBase}.${ext}` : newBase;
+
+      const row = document.createElement('div');
+      row.className = 'preview-item';
+      row.innerHTML = `
+        <span class="preview-old" title="${entry.name}">${entry.name}</span>
+        <span class="preview-arrow">→</span>
+        <span class="preview-new" title="${newName}">${newName}</span>
+      `;
+      container.appendChild(row);
+    });
+    if (sel.length > 12) {
+      const more = document.createElement('div');
+      more.style.cssText = 'font-size:11px;color:var(--muted);padding-top:4px';
+      more.textContent = `… und ${sel.length - 12} weitere`;
+      container.appendChild(more);
+    }
+    if (!sel.length) {
+      container.innerHTML = '<div style="color:var(--muted);font-size:12px">Keine Bilder ausgewählt</div>';
+    }
+  }
+
+  function applyBulkRename() {
+    const sel = images.filter(e => e.selected);
+    sel.forEach((entry, i) => {
+      const ext     = getExt(entry.name);
+      const oldBase = getBase(entry.name);
+      const newBase = buildBulkName(oldBase, i);
+      const newName = ext ? `${newBase}.${ext}` : newBase;
+      entry.name = newName;
+      if (entry.nameEl)   { entry.nameEl.textContent = newBase; entry.nameEl.title = newName; }
+      if (entry.extBadge) entry.extBadge.textContent = ext ? '.' + ext : '';
+    });
+    closeBulkRename();
+    toast(`${sel.length} Bilder umbenannt`);
+    updateStats();
+  }
+
+  // Close modal on backdrop click
+  document.getElementById('bulk-rename-modal').addEventListener('click', function(e) {
+    if (e.target === this) closeBulkRename();
+  });
+
+  // ── DOWNLOAD ──────────────────────────────────────
+  function downloadOne(entry) { exportRotated(entry, n => toast(`Gespeichert: ${n}`)); }
   function downloadAll() {
     if (!images.length) return;
     let done = 0;
-    images.forEach(e => {
-      exportRotated(e, () => {
-        done++;
-        if (done === images.length) toast(`${done} Bilder gespeichert`);
-      });
-    });
+    images.forEach(e => exportRotated(e, () => { done++; if (done === images.length) toast(`${done} Bilder gespeichert`); }));
   }
 
   function exportRotated(entry, cb) {
-    const img = new Image();
-    img.onload = () => {
+    const imgEl = new Image();
+    imgEl.onload = () => {
       const rad = (entry.rotation * Math.PI) / 180;
-      const sin = Math.abs(Math.sin(rad));
-      const cos = Math.abs(Math.cos(rad));
-      const w = Math.round(img.width * cos + img.height * sin);
-      const h = Math.round(img.width * sin + img.height * cos);
-
+      const sin = Math.abs(Math.sin(rad)); const cos = Math.abs(Math.cos(rad));
+      const w = Math.round(imgEl.width * cos + imgEl.height * sin);
+      const h = Math.round(imgEl.width * sin + imgEl.height * cos);
       const canvas = document.createElement('canvas');
-      canvas.width = w;
-      canvas.height = h;
+      canvas.width = w; canvas.height = h;
       const ctx = canvas.getContext('2d');
-      ctx.translate(w / 2, h / 2);
-      ctx.rotate(rad);
-      ctx.drawImage(img, -img.width / 2, -img.height / 2);
+      ctx.translate(w / 2, h / 2); ctx.rotate(rad);
+      ctx.drawImage(imgEl, -imgEl.width / 2, -imgEl.height / 2);
 
-      const ext = entry.name.split('.').pop().toLowerCase();
+      const ext  = getExt(entry.name);
       const mime = ext === 'png' ? 'image/png' : 'image/jpeg';
-      const baseName = entry.name.replace(/\.[^.]+$/, '');
-      const outName = `${baseName}_rotated${entry.rotation > 0 ? '+' : ''}${entry.rotation}deg.${ext === 'png' ? 'png' : 'jpg'}`;
+      // Use current (possibly renamed) name
+      const base = getBase(entry.name);
+      const outName = `${base}.${ext === 'png' ? 'png' : 'jpg'}`;
 
       canvas.toBlob(blob => {
         const a = document.createElement('a');
-        a.href = URL.createObjectURL(blob);
-        a.download = outName;
-        a.click();
+        a.href = URL.createObjectURL(blob); a.download = outName; a.click();
         URL.revokeObjectURL(a.href);
         if (cb) cb(outName);
       }, mime, 0.95);
     };
-    img.src = entry.src;
+    imgEl.src = entry.src;
   }
 
   // ── CLEAR ─────────────────────────────────────────
   function clearAll() {
-    images.length = 0;
-    grid.innerHTML = '';
-    dropzone.style.display = '';
-    fileInput.value = '';
-    updateUI();
-    toast('Alle Bilder entfernt');
+    images.length = 0; grid.innerHTML = '';
+    dropzone.style.display = ''; fileInput.value = '';
+    updateUI(); toast('Alle Bilder entfernt');
   }
 
   // ── LIGHTBOX ──────────────────────────────────────
   function openLightbox(entry) {
-    lbCurrentId = entry.id;
-    lbImg.src = entry.src;
+    lbCurrentId = entry.id; lbImg.src = entry.src;
     lbImg.style.transform = `rotate(${entry.rotation}deg)`;
     lightbox.classList.add('open');
   }
+  function closeLightbox() { lightbox.classList.remove('open'); lbCurrentId = null; }
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeLightbox(); closeBulkRename(); } });
 
-  function closeLightbox() {
-    lightbox.classList.remove('open');
-    lbCurrentId = null;
-  }
-
-  lightbox.addEventListener('click', e => {
-    if (e.target === lightbox) closeLightbox();
-  });
-
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeLightbox();
-  });
-
-  // ── UI UPDATE ─────────────────────────────────────
+  // ── UI ────────────────────────────────────────────
   function updateUI() {
-    const hasImages = images.length > 0;
-    toolbarArea.style.display = hasImages ? 'flex' : 'none';
+    toolbarArea.style.display = images.length ? 'flex' : 'none';
     updateStats();
   }
-
   function updateStats() {
-    if (!images.length) {
-      statsEl.textContent = 'Keine Bilder geladen';
-      return;
-    }
-    const sel = images.filter(e => e.selected).length;
+    if (!images.length) { statsEl.textContent = 'Keine Bilder geladen'; return; }
+    const sel     = images.filter(e => e.selected).length;
     const rotated = images.filter(e => e.rotation !== 0).length;
     statsEl.innerHTML =
       `<span>${images.length}</span> Bilder &nbsp;·&nbsp; ` +
@@ -772,19 +737,17 @@
   }
 
   // ── HELPERS ───────────────────────────────────────
-  function formatSize(bytes) {
-    if (bytes < 1024) return `${bytes} B`;
-    if (bytes < 1048576) return `${(bytes / 1024).toFixed(1)} KB`;
-    return `${(bytes / 1048576).toFixed(1)} MB`;
+  function formatSize(b) {
+    if (b < 1024) return `${b} B`;
+    if (b < 1048576) return `${(b/1024).toFixed(1)} KB`;
+    return `${(b/1048576).toFixed(1)} MB`;
   }
-
   let toastTimer;
   function toast(msg) {
     const el = document.getElementById('toast');
-    el.textContent = msg;
-    el.classList.add('show');
+    el.textContent = msg; el.classList.add('show');
     clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => el.classList.remove('show'), 2200);
+    toastTimer = setTimeout(() => el.classList.remove('show'), 2400);
   }
 </script>
 </body>
